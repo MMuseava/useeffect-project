@@ -1,0 +1,11 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid red;
+
+}
+.btn-getdog{
+    width: 60px;
+    height: 40px;
+    border-radius: 15%;
+}
