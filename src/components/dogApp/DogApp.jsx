@@ -16,7 +16,7 @@ const DogApp = () => {
       const data = await response.json();
       setDogImageList([
         ...dogImageList,
-        { url: data.message, id: uuidv4(), likes: 0 },
+        { url: data.message, id: uuidv4(), likes: 0, dislike: 0  },
       ]);
       setIsLoading(false);
     } catch (err) {
@@ -35,6 +35,13 @@ const DogApp = () => {
       )
     );
   };
+  const onDislikeHandler = (id) => {
+    setDogImageList(
+      dogImageList.map((dog) =>
+        dog.id === id ? { ...dog, dislike: dog.dislike +1 } : dog
+      )
+    );
+  };
 
   useEffect(() => {
     // fetch(url)
@@ -44,8 +51,9 @@ const DogApp = () => {
   }, []);
 
   return (
-    <div>
-      <button onClick={getDog}>{isLoading ? "loading..." : "Get Dog"}</button>
+      <div className="container-app">
+          <h1>Dog API</h1>
+      <button className="btn-getdog" onClick={getDog}>{isLoading ? "loading..." : "Get Dog"}</button>
       <div className="container">
         {dogImageList.map((dog) => (
           <DogCard
@@ -53,8 +61,10 @@ const DogApp = () => {
             id={dog.id}
             url={dog.url}
             likes={dog.likes}
+            dislike={dog.dislike}
             onDeleteHandler={onDeleteHandler}
-            onLikeHandler={onLikeHandler}
+                onLikeHandler={onLikeHandler}
+                onDislikeHandler={onDislikeHandler}
           />
         ))}
       </div>

@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 20px 20px;
+   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+img {
+    width: 70%; 
+    min-width: 300px; 
+    height: 80%;
+}
+.all-btn {
+    display: flex;
+    gap: 4px;
+    
+}
+.like-btn,
+.clear-btn {
+      background-color:rgb(51, 66, 87) ;
+    color: white;
+  
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 15%;
+    font-size: 16px;
+}
+.clear-btn:hover {
+    background-color: rgb(94, 131, 183);
+}
+.like-btn:hover {
+    background-color:rgb(94, 131, 183);
+}
+.likes {
+    font-size: 16px;
+    color: black;
+}
+.container-app {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.btn-getdog {
+    width: 100px;
+    height: 60px;
+    border-radius: 15%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    color:white;
+    background-color:rgb(51, 66, 87) ;
+}
+h1{
+    margin-top: 20px ;
+    margin-bottom: 30px;
+    text-align: center;
+    color:rgb(51, 66, 87) ;
+}
